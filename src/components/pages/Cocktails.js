@@ -12,8 +12,6 @@ export default function Cocktails() {
   const param = category.categoryName;
   const newParam = snakeCase(param);
 
-  console.log(`param ${param}`);
-
   useEffect(() => {
     const getCocktails = async () => {
       setcocktailList({ status: "Loading", data: [] });

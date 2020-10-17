@@ -14,9 +14,9 @@ SET UP
 - useEffect - to fetch data from api
 - async function to await the data as it comes in
 - return jsx and map over the array of objects in the response
-  [] - create a link to a seperate page with list of cocktails of chosen categorie
-- [] - add a route with params
-  [] -
+  [x] - create a link to a seperate page with list of cocktails of chosen categorie
+  [x] - add a route with params
+  [x] - fetch data from api and map over the data
   [] -
   [] -
   [] -
