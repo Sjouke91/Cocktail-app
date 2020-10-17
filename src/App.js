@@ -20,11 +20,11 @@ function App() {
         </ul>
       </nav>
       <Switch>
+        <Route path="/categories/:categoryName">
+          <Cocktails />
+        </Route>
         <Route path="/categories">
           <Categories />
-        </Route>
-        <Route path="/categories/list">
-          <Cocktails />
         </Route>
         <Route path="/categories/list/:cocktailID">
           <Details />

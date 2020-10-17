@@ -7,16 +7,15 @@ SET UP
 [x] - create an empty folder per page and add a component
 [x] - make routes to component pages
 
-[] - create a component page and fetch data from api
+[x] - create a component page and fetch data from api
 
 - import axios, useState, useEffect
-  _ useState - to store data in state
-  _ useEffect - to fetch data from api
-  _ async function to await the data as it comes in
-  _ return jsx and map over the array of objects in the response
-  [] - store data in state
-  [] - render the page with JSX
-  [] -
+- useState - to store data in state
+- useEffect - to fetch data from api
+- async function to await the data as it comes in
+- return jsx and map over the array of objects in the response
+  [] - create a link to a seperate page with list of cocktails of chosen categorie
+- [] - add a route with params
   [] -
   [] -
   [] -

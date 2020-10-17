@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Categories() {
   const [Categorylist, setCategorylist] = useState({
@@ -39,7 +40,9 @@ export default function Categories() {
       {Categorylist.data.map((category, index) => {
         return (
           <div key={index}>
-            <p>{category.strCategory}</p>
+            <Link to={`/categories/:${category.strCategory}`}>
+              <p>{category.strCategory}</p>
+            </Link>
           </div>
         );
       })}
