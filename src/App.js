@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Switch, Route, NavLink } from "react-router-dom";
+import Home from "./components/pages/Home";
+import Details from "./components/pages/Details";
+import Cocktails from "./components/pages/Cocktails";
+import Categories from "./components/pages/Categories";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <ul>
+          <li>
+            <NavLink to="/home">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/categories">Categories</NavLink>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route path="/categories">
+          <Categories />
+        </Route>
+        <Route path="/categories/list">
+          <Cocktails />
+        </Route>
+        <Route path="/categories/list/:cocktailID">
+          <Details />
+        </Route>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }
