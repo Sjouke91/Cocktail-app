@@ -17,7 +17,6 @@ export default function Categories() {
         if (response.data === "false") {
           setCategorylist({ status: "error unclear", data: [] });
         } else {
-          console.log(response);
           setCategorylist({ status: "done", data: response.data.drinks });
         }
       } catch (error) {
@@ -27,8 +26,6 @@ export default function Categories() {
     };
     getCategories();
   }, []);
-
-  console.log("this is categorielist", Categorylist);
 
   return (
     <div>
@@ -40,7 +37,7 @@ export default function Categories() {
       {Categorylist.data.map((category, index) => {
         return (
           <div key={index}>
-            <Link to={`/categories/:${category.strCategory}`}>
+            <Link to={`/categories/${category.strCategory}`}>
               <p>{category.strCategory}</p>
             </Link>
           </div>

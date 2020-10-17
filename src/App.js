@@ -26,7 +26,7 @@ function App() {
         <Route path="/categories">
           <Categories />
         </Route>
-        <Route path="/categories/list/:cocktailID">
+        <Route path="/list/:idDrink">
           <Details />
         </Route>
         <Route exact path="/home">
