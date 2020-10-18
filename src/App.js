@@ -24,7 +24,7 @@ function App() {
       <nav className="Navbar">
         <ul>
           <li>
-            <NavLink className="navlink" to="/home">
+            <NavLink className="navlink" to="/">
               Home
             </NavLink>
           </li>
@@ -78,7 +78,7 @@ function App() {
         <Route path="/ingredient/:ingredient">
           <Ingredient />
         </Route>
-        <Route exact path="/home">
+        <Route exact path="/">
           <Home />
         </Route>
         <Route exact path="/randomizer/:idDrink">
