@@ -10,6 +10,7 @@ export default function Categories() {
 
   useEffect(() => {
     const getCategories = async () => {
+      setCategorylist({ status: "loading", data: [] });
       try {
         const response = await axios.get(
           "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"

@@ -1,0 +1,45 @@
+.App {
+  text-align: start;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Navbar {
+  background-color: rgb(102, 182, 228);
+  height: 40px;
+  padding-bottom: 10px;
+  justify-content: center;
+  display: flex;
+  justify-content: flex-end;
+
+  ul {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  li {
+    color: white;
+    list-style: none;
+    list-style-type: none;
+    margin: auto 15px;
+  }
+
+  .searchbar {
+    button {
+      justify-content: center;
+      margin-top: 15px;
+      margin-right: 40px;
+    }
+  }
+}

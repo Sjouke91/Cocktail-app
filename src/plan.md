@@ -21,4 +21,10 @@ SET UP
   [] -
   [] -
 
+create a search functionality
+[x] - create an input field and a button
+[] - create a search function that sets the useState to searchtext
+[] - push searchtext to url
+[] - create useEffect that fetches cocktaildata based on searchtext
+
 \*Check link for more info on react router https://reactrouter.com/web/guides/quick-start
