@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import "./Details.scss";
+import { useHistory } from "react-router-dom";
 
 export default function Details() {
   const [Cocktail, setCocktail] = useState({ status: "idle", data: [] });
-  const params = useParams();
-  const cocktailID = params.idDrink;
-
-  console.log(cocktailID);
+  const [Reset, setreset] = useState("");
+  const [Remember, setRemember] = useState("");
+  const history = useHistory();
 
   useEffect(
     () => {
@@ -17,13 +16,14 @@ export default function Details() {
 
         try {
           const response = await axios.get(
-            `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailID}`
+            `https://www.thecocktaildb.com/api/json/v1/1/random.php`
           );
           if (response === "false") {
             setCocktail({ status: "unclear error", data: [] });
           } else {
-            console.log("This is response", response);
             setCocktail({ status: "done", data: response.data.drinks });
+            setRemember(response.data.drinks[0].idDrink);
+            console.log("This is response", response);
           }
         } catch (error) {
           setCocktail({ status: "error", data: [], message: error.message });
@@ -31,15 +31,16 @@ export default function Details() {
       };
       getCocktail();
     }, // eslint-disable-next-line
-    []
+    [Reset]
   );
+  console.log("This is remember", Remember);
 
   return (
     <div className="background">
       {Cocktail.status === "loading" ? <h1>Wait for it...</h1> : ""}
       {Cocktail.data.map((cocktail) => {
         return (
-          <div className="card">
+          <div key={cocktail.idDrink} className="card">
             <div className="text">
               <h1>{cocktail.strDrink}</h1>
               <p>type: {cocktail.strCategory}</p>
@@ -52,6 +53,14 @@ export default function Details() {
           </div>
         );
       })}
+      <button
+        onClick={() => {
+          setreset(Math.random());
+          history.push(Remember);
+        }}
+      >
+        Next!
+      </button>
     </div>
   );
 }

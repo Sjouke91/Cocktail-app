@@ -6,12 +6,16 @@ import Details from "./components/pages/Details";
 import Cocktails from "./components/pages/Cocktails";
 import Categories from "./components/pages/Categories";
 import DetailsName from "./components/pages/DetailsName";
+import Ingredient from "./components/pages/Ingredient";
+import Randomizer from "./components/pages/Randomizer";
 
 function App() {
   const [Search, setSearch] = useState("");
+  const [SearchIngredient, setSearchIngredient] = useState("");
 
   function searchEmpty() {
     setSearch("");
+    setSearchIngredient("");
     return <Link to="/cocktail/:nameDrink" />;
   }
 
@@ -28,17 +32,32 @@ function App() {
             <NavLink to="/categories">Categories</NavLink>
           </li>
         </ul>
-        <div className="searchbar">
-          <input
-            placeholder="Your favorite cocktail"
-            onChange={(e) => {
-              setSearch(e.target.value);
-            }}
-            value={Search}
-          ></input>
-          <Link onClick={searchEmpty} to={`/cocktail/${Search}`}>
-            <button onClick={searchEmpty}>Search</button>
-          </Link>
+
+        <div className="searchParent">
+          <div className="searchbar">
+            <input
+              placeholder="Your favorite cocktail"
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+              value={Search}
+            ></input>
+            <Link to={`/cocktail/${Search}`}>
+              <button onClick={searchEmpty}>Search</button>
+            </Link>
+          </div>
+          <div className="searchbar">
+            <input
+              placeholder="Your favorite ingredient"
+              onChange={(e) => {
+                setSearchIngredient(e.target.value);
+              }}
+              value={SearchIngredient}
+            ></input>
+            <Link to={`/ingredient/${SearchIngredient}`}>
+              <button onClick={searchEmpty}>Search</button>
+            </Link>
+          </div>
         </div>
       </nav>
       <Switch>
@@ -54,8 +73,14 @@ function App() {
         <Route path="/cocktail/:nameDrink">
           <DetailsName />
         </Route>
+        <Route path="/ingredient/:ingredient">
+          <Ingredient />
+        </Route>
         <Route exact path="/home">
           <Home />
+        </Route>
+        <Route exact path="/randomizer/:idDrink">
+          <Randomizer />
         </Route>
       </Switch>
     </div>

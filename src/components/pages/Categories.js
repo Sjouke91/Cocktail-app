@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./Categories.scss";
 
 export default function Categories() {
   const [Categorylist, setCategorylist] = useState({
@@ -31,10 +32,11 @@ export default function Categories() {
   return (
     <div>
       {Categorylist.status === "error" ? (
-        <h3>You f*cked it up because we have a: {Categorylist.message}</h3>
+        <h3>Error you stupid: {Categorylist.message}</h3>
       ) : (
         ""
       )}
+      <h2>Pick your category</h2>
       {Categorylist.data.map((category, index) => {
         return (
           <div key={index}>

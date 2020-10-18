@@ -30,5 +30,6 @@ create a search functionality
 vragen:
 
 - route does not work due to slash
+- empty search is no page
 
 \*Check link for more info on react router https://reactrouter.com/web/guides/quick-start

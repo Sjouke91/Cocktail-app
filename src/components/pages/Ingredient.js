@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 
-export default function DetailsName() {
+export default function Ingredient() {
   const [SearchResult, setSearchResult] = useState({
     status: "idle",
     data: [],
   });
   const category = useParams();
-  const param = category.nameDrink;
+  const param = category.ingredient;
 
   console.log("thisisparam", param);
 
@@ -16,7 +16,7 @@ export default function DetailsName() {
     () => {
       const getData = async () => {
         const response = await axios.get(
-          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${param}`
+          `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${param}`
         );
         console.log("this is response", response.data);
         setSearchResult({ status: "done", data: response.data.drinks });
@@ -27,8 +27,8 @@ export default function DetailsName() {
   );
 
   console.log("state", SearchResult);
-  if (SearchResult.data === null || param === "") {
-    return <h1>This cocktail has not been invented yet...</h1>;
+  if (SearchResult.data === undefined || param === "") {
+    return <h1>This ingredient is never tried in a cocktail before...</h1>;
   } else {
     return (
       <div className="Background">
