@@ -27,4 +27,8 @@ create a search functionality
 [] - push searchtext to url
 [] - create useEffect that fetches cocktaildata based on searchtext
 
+vragen:
+
+- route does not work due to slash
+
 \*Check link for more info on react router https://reactrouter.com/web/guides/quick-start

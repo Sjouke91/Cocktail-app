@@ -36,7 +36,7 @@ function App() {
             }}
             value={Search}
           ></input>
-          <Link to={`/cocktail/${Search}`}>
+          <Link onClick={searchEmpty} to={`/cocktail/${Search}`}>
             <button onClick={searchEmpty}>Search</button>
           </Link>
         </div>

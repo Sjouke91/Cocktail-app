@@ -23,7 +23,7 @@ export default function DetailsName() {
       };
       getData();
     }, // eslint-disable-next-line
-    []
+    [param]
   );
 
   console.log("state", SearchResult);
