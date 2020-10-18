@@ -29,7 +29,9 @@ function App() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/categories">Categories</NavLink>
+            <NavLink className="navlink" to="/categories">
+              Categories
+            </NavLink>
           </li>
         </ul>
 

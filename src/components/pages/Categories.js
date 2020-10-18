@@ -30,22 +30,28 @@ export default function Categories() {
   }, []);
 
   return (
-    <div>
-      {Categorylist.status === "error" ? (
-        <h3>Error you stupid: {Categorylist.message}</h3>
-      ) : (
-        ""
-      )}
-      <h2>Pick your category</h2>
-      {Categorylist.data.map((category, index) => {
-        return (
-          <div key={index}>
-            <Link to={`/categories/${category.strCategory}`}>
-              <p>{category.strCategory}</p>
-            </Link>
-          </div>
-        );
-      })}
+    <div className="background">
+      <div className="List">
+        {Categorylist.status === "error" ? (
+          <h3>Error you stupid: {Categorylist.message}</h3>
+        ) : (
+          ""
+        )}
+        <h2>Pick your category</h2>
+        {Categorylist.data.map((category, index) => {
+          return (
+            <div key={index}>
+              <Link className="link" to={`/categories/${category.strCategory}`}>
+                <p>{category.strCategory}</p>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+      <div id="one" className="colorbar"></div>
+      <div id="two" className="colorbar"></div>
+      <div id="four" className="colorbar"></div>
+      <div id="five" className="colorbar"></div>
     </div>
   );
 }

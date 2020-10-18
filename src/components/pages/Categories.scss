@@ -1,0 +1,44 @@
+.background {
+  .List {
+    width: 200px;
+    background-color: #a5c882;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+
+    p {
+      color: white;
+      font-style: none;
+      font-size: 20px;
+      margin: 14px 0;
+      text-decoration: none;
+    }
+
+    .link {
+      text-decoration: none;
+    }
+  }
+  .colorbar {
+    width: 20vw;
+    height: 100vh;
+  }
+  #one {
+    background-color: #2d3142;
+  }
+  #two {
+    background-color: #8eb8e5;
+  }
+  #three {
+    background-color: #a5c882;
+  }
+  #four {
+    background-color: #f7dd72;
+  }
+  #five {
+    background-color: #f39b6d;
+  }
+}

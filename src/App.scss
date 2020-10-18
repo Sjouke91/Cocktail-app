@@ -3,7 +3,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #8eb8e5;
 }
 
 @keyframes App-logo-spin {
@@ -16,14 +16,22 @@
 }
 
 .Navbar {
-  background-color: rgb(102, 182, 228);
+  background-color: #5988b9;
   height: 40px;
   padding-bottom: 10px;
   justify-content: center;
   display: flex;
   justify-content: flex-end;
   border-bottom: dotted;
-  border-color: black;
+  border-color: #2d3142;
+
+  .navlink {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    justify-content: center;
+    font-weight: 600;
+  }
 
   .searchParent {
     display: flex;
